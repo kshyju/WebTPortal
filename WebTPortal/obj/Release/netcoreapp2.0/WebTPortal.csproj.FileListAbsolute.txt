@@ -1,0 +1,11 @@
+C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\bin\Release\netcoreapp2.0\WebTPortal.deps.json
+C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\bin\Release\netcoreapp2.0\WebTPortal.runtimeconfig.json
+C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\bin\Release\netcoreapp2.0\WebTPortal.runtimeconfig.dev.json
+C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\bin\Release\netcoreapp2.0\WebTPortal.dll
+C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\bin\Release\netcoreapp2.0\WebTPortal.pdb
+C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\obj\Release\netcoreapp2.0\WebTPortal.csprojResolveAssemblyReference.cache
+C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\obj\Release\netcoreapp2.0\WebTPortal.csproj.CoreCompileInputs.cache
+C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\obj\Release\netcoreapp2.0\WebTPortal.AssemblyInfoInputs.cache
+C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\obj\Release\netcoreapp2.0\WebTPortal.AssemblyInfo.cs
+C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\obj\Release\netcoreapp2.0\WebTPortal.dll
+C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\obj\Release\netcoreapp2.0\WebTPortal.pdb

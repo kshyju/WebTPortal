@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model SiteDetails
+<div class="row">
+    <div class="col-md-12">
+        <h2>https://www.msn.com/</h2>
+
+        <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <td>Check Time(UTC)</td>
+                    <td>Network calls traced</td>
+                </tr>
+            </thead>
+
+            @foreach (var run in Model.Calls.OrderByDescending(a => a.StartTime))
+            {
+                <tr>
+                    <td>@run.StartTime.ToString("g")</td>
+                    <td>
+                        <a asp-action="RunDetails" asp-route-displaytype="grouped" asp-route-id="@run.RunId" >@run.CallCount</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <p>Current UTC Time : @DateTime.UtcNow.ToString("g")</p>
+    </div>
+</div>
+
