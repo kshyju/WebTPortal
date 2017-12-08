@@ -1,13 +1,14 @@
-C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal
+C:\Shyju\OSS\WebTPortal\WebTPortal
 --output-path=obj\Any CPU\Release\netcoreapp2.0\
 --application-name=WebTPortal
---content-root=C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal
---file=C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\Views\Home\About.cshtml
---file=C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\Views\Home\Contact.cshtml
---file=C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\Views\Home\Index.cshtml
---file=C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\Views\Home\RunDetails.cshtml
---file=C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\Views\Shared\Error.cshtml
---file=C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\Views\Shared\_Layout.cshtml
---file=C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\Views\Shared\_ValidationScriptsPartial.cshtml
---file=C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\Views\_ViewImports.cshtml
---file=C:\Shyju\OSS\WebT\Portal\WebTPortal\WebTPortal\Views\_ViewStart.cshtml
+--content-root=C:\Shyju\OSS\WebTPortal\WebTPortal
+--file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Home\About.cshtml
+--file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Home\Contact.cshtml
+--file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Home\DetailsForUrl.cshtml
+--file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Home\Index.cshtml
+--file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Home\RunDetails.cshtml
+--file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Shared\Error.cshtml
+--file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Shared\_Layout.cshtml
+--file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\_ViewImports.cshtml
+--file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\_ViewStart.cshtml
