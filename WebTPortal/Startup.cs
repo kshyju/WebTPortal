@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebTPortal.Controllers;
+using WebTPortal.Data;
 
 namespace WebTPortal
 {
@@ -21,6 +23,9 @@ namespace WebTPortal
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<AppSettings>(Configuration);
+
+            services.AddTransient<IHealthData, HealthData>();
             services.AddMvc();
         }
 

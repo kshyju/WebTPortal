@@ -1,14 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
 using Dapper;
+using Microsoft.Extensions.Options;
+using WebTPortal.Controllers;
 using WebTPortal.Models;
 
-namespace WebTPortal.Controllers
+namespace WebTPortal.Data
 {
-    public class HealthData
+    public class HealthData : IHealthData
     {
-
-        private const string conStr = "d";
+        public HealthData(IOptions<AppSettings> options)
+        {
+            connecitonStr = options.Value.ConnectionString;
+        }
+        private readonly string connecitonStr;
                
 
 
@@ -20,7 +25,7 @@ SELECT   [RunId] ,
          COUNT(1) CallCount
 FROM     [dbo].[NetworkCall] WITH ( NOLOCK ) WHERE SiteId=2
 GROUP BY RunId";
-            using (var c = new SqlConnection(conStr))
+            using (var c = new SqlConnection(connecitonStr))
             {
                 return c.Query<RunItem>(q, new { siteId });
             }
@@ -28,15 +33,15 @@ GROUP BY RunId";
         public IEnumerable<NetworkCall> GetCallsForRun(int runId,int siteId)
         {
             var q = "SELECT * from NetworkCall WITH (NOLOCK) WHERE RunId=@runId and SiteId=@siteId";
-            using (var c = new SqlConnection(conStr))
+            using (var c = new SqlConnection(connecitonStr))
             {
                 return c.Query<NetworkCall>(q, new { runId, siteId });
             }
         }
         public IEnumerable<NetworkCall> GetCallsForUrl(string url)
         {
-            var q = "SELECT * from NetworkCall WITH (NOLOCK) WHERE Url=@url";
-            using (var c = new SqlConnection(conStr))
+            var q = "SELECT * from NetworkCall WITH (NOLOCK) WHERE Url=@url ORDER BY StartTime DESC";
+            using (var c = new SqlConnection(connecitonStr))
             {
                 return c.Query<NetworkCall>(q, new { url });
             }

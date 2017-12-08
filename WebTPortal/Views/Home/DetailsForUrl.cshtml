@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "MSN|Url";
+}
+@model UrlRunDetails
+
+
+
+
+@{
+    var grouped = Model.Calls.GroupBy(a => a.ResourceType);
+    //.ToDictionary();
+
+
+    var duplicates = Model.Calls.Where(a => a.Method == "GET")
+        .GroupBy(i => i.Url)
+        .Where(g => g.Count() > 1)
+        .Select(g => g.Key);
+
+}
+
+
+<div class="container-fluid">
+    <h1>Details</h1>
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>https://www.msn.com/</h3>
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="chart_div" style="width: 100%; height: 300px;"></div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <table>
+                @foreach (var run in Model.Calls)
+                {
+                    <tr>
+                        <td>@run.StartTime</td>
+                        <td>@run.Duration</td>
+                        <td>@run.Status</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts
+    {
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+
+        @{
+            var d = Model.Calls.Select(u => new { Date = u.StartTime.ToString("m"), u.Duration });
+        }
+
+        (function($) {
+            var data =@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(d));
+            var d = [['Date', 'Duration']];
+
+            $.each(data,function (index, item) {
+                d.push([item.Date, item.Duration]);
+            });
+
+            $(function() {
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ['Date', 'Response Time'],
+                        ['2013',  550  ],
+                        ['2014',  200 ],
+                        ['2015',  60],
+                        ['2016',  78]
+                    ]);
+
+                    var options = {
+                        title: 'Response Time',
+                        hAxis: {title: 'Date',  titleTextStyle: {color: '#333'}},
+                        vAxis: {minValue: 0}
+                    };
+
+                    var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+                    chart.draw(data, options);
+                }
+            });
+
+        })(jQuery);
+
+
+
+    </script>
+}

@@ -6,19 +6,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
 using Microsoft.AspNetCore.Mvc;
+using WebTPortal.Data;
 using WebTPortal.Models;
 
 namespace WebTPortal.Controllers
 {
     public class HomeController : Controller
     {
-       
-        HealthData d=new HealthData();
+        private readonly IHealthData db;
+
+        public HomeController(IHealthData healthData)
+        {
+            this.db = healthData;
+        }
 
 
         public IActionResult Index()
         {
-            var calls = d.GetRunsForSite(1);
+            var calls = db.GetRunsForSite(1);
             var vm = new SiteDetails() {Calls = calls};
             return View(vm);
         }
@@ -26,7 +31,7 @@ namespace WebTPortal.Controllers
 
         public IActionResult RunDetails(int id,string displayType = "all")
         {
-            var calls = d.GetCallsForRun(id, 2);
+            var calls = db.GetCallsForRun(id, 2);
             var vm = new RunDetailsVm
             {
                 DisplayType= displayType,
@@ -38,8 +43,12 @@ namespace WebTPortal.Controllers
         }
         public IActionResult DetailsForUrl(string url)
         {
-            var calls = d.GetCallsForUrl(url);
-            return View(calls);
+            var vm = new UrlRunDetails
+            {
+                Calls = db.GetCallsForUrl(url),
+                Url = url
+            };
+            return View(vm);
         }
         public IActionResult About()
         {

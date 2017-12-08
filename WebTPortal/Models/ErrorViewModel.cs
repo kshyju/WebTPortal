@@ -18,6 +18,12 @@ namespace WebTPortal.Models
         public DateTime StartTime { set; get; }
     }
 
+    public class UrlRunDetails
+    {
+        public string Url { set; get; }
+        public IEnumerable<NetworkCall> Calls { set; get; }
+
+    }
     public class RunDetailsVm : RunItem
     {
         public IEnumerable<NetworkCall> Calls { set; get; }
