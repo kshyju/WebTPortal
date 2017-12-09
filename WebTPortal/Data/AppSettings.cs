@@ -2,7 +2,7 @@
 {
     public class AppSettings
     {
-        public string AppInsightsKey { set; get; }
+        public string GoogleAnalyticsKey { set; get; }
         public string ConnectionString { set; get; }
     }
 }

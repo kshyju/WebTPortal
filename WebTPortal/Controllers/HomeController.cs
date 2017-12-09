@@ -20,7 +20,6 @@ namespace WebTPortal.Controllers
             this.db = healthData;
         }
 
-
         public IActionResult Index()
         {
             var calls = db.GetRunsForSite(1);
@@ -56,13 +55,7 @@ namespace WebTPortal.Controllers
 
             return View();
         }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
+        
 
         public IActionResult Error()
         {

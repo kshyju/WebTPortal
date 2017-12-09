@@ -2,7 +2,6 @@
 using System.Data.SqlClient;
 using Dapper;
 using Microsoft.Extensions.Options;
-using WebTPortal.Controllers;
 using WebTPortal.Models;
 
 namespace WebTPortal.Data
