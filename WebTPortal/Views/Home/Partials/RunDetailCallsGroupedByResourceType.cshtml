@@ -1,0 +1,41 @@
+﻿@model RunDetailsVm
+@{
+    var grouped = Model.Calls.GroupBy(a => a.ResourceType);
+    //.ToDictionary();
+    var startTime = Model.Calls.Select(a => a.StartTime).First();
+}
+@foreach (var k in grouped)
+{
+<h4>@k.Key (@k.Count())</h4>
+
+<table class="table table-striped table-condensed table-responsive">
+    <thead>
+        <tr>
+            <td>Method</td>
+            <td>Duration</td>
+
+            <td>Status</td>
+            <td>Type</td>
+            <td>Url</td>
+        </tr>
+    </thead>
+    @foreach (var run in k.OrderByDescending(a => a.Duration).ThenBy(a => a.Url))
+    {
+    <tr>
+        <td class="small">@run.Method</td>
+        <td class="small">
+            <a asp-controller="Home" asp-action="DetailsForUrl" asp-route-url="@run.Url" title="Click to see details"> @run.Duration</a>
+
+        </td>
+
+
+        <td class="small">@run.Status</td>
+        <td class="small">@run.ResourceType</td>
+        <td class="small">
+            <a asp-controller="Home" asp-action="DetailsForUrl" asp-route-url="@run.Url" title="Click to see details"> @run.Url</a>
+
+        </td>
+    </tr>
+    }
+</table>
+}

@@ -1,0 +1,25 @@
+﻿@model RunDetailsVm
+@{
+    var duplicates = Model.Calls.Where(a => a.Method == "GET")
+        .GroupBy(i => i.Url)
+        .Where(g => g.Count() > 1)
+        .Select(g => g.Key);
+}
+@if (duplicates.Any())
+{
+<div class="row">
+    <div class="col-lg-12">
+        <div class="alert alert-danger" role="alert">
+            We noticed @duplicates.Count() duplicate GET calls from this page
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <ul class="alert alert-warning" >
+            @foreach (var d in duplicates.OrderBy(a => a))
+                {
+            <li>@d</li>
+                }
+        </ul>
+    </div>
+</div>
+}

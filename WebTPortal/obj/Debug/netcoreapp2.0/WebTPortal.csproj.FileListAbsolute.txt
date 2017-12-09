@@ -14,9 +14,9 @@ C:\Shyju\OSS\WebTPortal\WebTPortal\bin\Debug\netcoreapp2.0\WebTPortal.runtimecon
 C:\Shyju\OSS\WebTPortal\WebTPortal\bin\Debug\netcoreapp2.0\WebTPortal.runtimeconfig.dev.json
 C:\Shyju\OSS\WebTPortal\WebTPortal\bin\Debug\netcoreapp2.0\WebTPortal.dll
 C:\Shyju\OSS\WebTPortal\WebTPortal\bin\Debug\netcoreapp2.0\WebTPortal.pdb
-C:\Shyju\OSS\WebTPortal\WebTPortal\obj\Debug\netcoreapp2.0\WebTPortal.csprojResolveAssemblyReference.cache
 C:\Shyju\OSS\WebTPortal\WebTPortal\obj\Debug\netcoreapp2.0\WebTPortal.csproj.CoreCompileInputs.cache
 C:\Shyju\OSS\WebTPortal\WebTPortal\obj\Debug\netcoreapp2.0\WebTPortal.AssemblyInfoInputs.cache
 C:\Shyju\OSS\WebTPortal\WebTPortal\obj\Debug\netcoreapp2.0\WebTPortal.AssemblyInfo.cs
 C:\Shyju\OSS\WebTPortal\WebTPortal\obj\Debug\netcoreapp2.0\WebTPortal.dll
 C:\Shyju\OSS\WebTPortal\WebTPortal\obj\Debug\netcoreapp2.0\WebTPortal.pdb
+C:\Shyju\OSS\WebTPortal\WebTPortal\obj\Debug\netcoreapp2.0\WebTPortal.csprojResolveAssemblyReference.cache

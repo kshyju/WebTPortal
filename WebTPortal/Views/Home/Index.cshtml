@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "LetMeMonitor";
 }
 
 @model SiteDetails
@@ -29,7 +29,7 @@
                 <tr>
                     <td>@run.StartTime.ToString("g")</td>
                     <td>
-                        <a asp-action="RunDetails" asp-route-displaytype="grouped" asp-route-id="@run.RunId" >@run.CallCount</a>
+                        <a asp-action="RunDetails" asp-route-displaytype="all" asp-route-id="@run.RunId" >@run.CallCount</a>
                     </td>
                 </tr>
             }
