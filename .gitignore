@@ -51,3 +51,4 @@ Temporary Items
 .vs/WebTPortal/v15/Server/sqlite3/storage.ide-shm
 *.ide
 *.ide-wal
+WebTPortal/appsettings.json
