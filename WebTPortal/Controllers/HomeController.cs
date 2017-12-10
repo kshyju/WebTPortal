@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
-using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using WebTPortal.Data;
 using WebTPortal.Models;

@@ -6,6 +6,7 @@ C:\Shyju\OSS\WebTPortal\WebTPortal
 --file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Home\Contact.cshtml
 --file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Home\DetailsForUrl.cshtml
 --file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Home\Index.cshtml
+--file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Home\Partials\RunDetailCallsGroupedByDomain.cshtml
 --file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Home\Partials\RunDetailCallsGroupedByResourceType.cshtml
 --file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Home\Partials\RunDetailsDuplicateCalls.cshtml
 --file=C:\Shyju\OSS\WebTPortal\WebTPortal\Views\Home\Partials\RunDetailsResponseStatusDonutChart.cshtml
