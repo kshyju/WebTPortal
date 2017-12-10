@@ -1,0 +1,30 @@
+﻿@model RunDetailsVm
+@{
+    var urls = Model.Calls.Select(a => new Uri(a.Url));
+    var hosts = urls.GroupBy(a => a.Host).Select(x => new { Site = x.Key, CallCount = x.Count() }).OrderByDescending(a=>a.CallCount);
+    var topHost = hosts.First();
+    var nonSecureDomainCount = urls.Count(a => a.Scheme == "http");
+}
+
+@if (nonSecureDomainCount > 0)
+{
+    <div class="alert alert-danger" role="alert"><strong>@nonSecureDomainCount</strong> non https calls!</div>
+}
+
+
+<div class="alert alert-info" role="alert">
+    <strong>@topHost.CallCount</strong> calls were made to  <strong>@topHost.Site</strong>
+
+    <span class="pull-right"><a href="#" id="show-all-domains"  data-origmsg="">View all the different domains calls were made to</a></span>
+</div>
+<div id="tbl-all-domains-callcount" style="display: none;">
+    <table class="table table-condensed table-striped tab-content">
+        @foreach (var host in hosts)
+        {
+        <tr>
+            <td class="small">@host.Site</td>
+            <td class="small">@host.CallCount</td>
+        </tr>
+        }
+    </table>
+</div>

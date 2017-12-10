@@ -3,6 +3,8 @@
 }
 @model RunDetailsVm
 
+
+
 <div class="container-fluid">
     <h1>Details</h1>
     <div class="row">
@@ -20,6 +22,9 @@
     @Html.Partial("Partials/RunDetailsDuplicateCalls")
 
     @Html.Partial("Partials/RunDetailsResponseStatusDonutChart")
+
+    @Html.Partial("Partials/RunDetailCallsGroupedByDomain")
+
 
 
     <div class="row">
@@ -85,7 +90,22 @@
         $(function () {
                 $("#DisplayType").change(function() {
                     $(this).closest("form").submit();
-                });
+            });
+
+            $("#show-all-domains").click(function(e) {
+                e.preventDefault();
+                var _this = $(this);
+                if (_this.data("origmsg").length===0) {
+                    _this.data("origmsg", _this.text());
+                    _this.text("Hide");
+                    $("#tbl-all-domains-callcount").fadeIn(600);
+                } else {
+                    _this.text(_this.data("origmsg"));
+                    _this.data("origmsg", "");
+                    $("#tbl-all-domains-callcount").fadeOut(300);
+                }
+                
+            });
 
                 var data = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(groupedByStats));
                 var d = [['Status', 'Count']];
@@ -103,21 +123,22 @@
 
                     var options = {
                         title: 'Response Status',
-                        pieHole: 0.4
+                        pieHole: 0.2
                     };
 
                     var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
                     chart.draw(data, options);
                 }
 
+
             });
 
 
 
-    </script>
 
 
     </script>
+
 }
 
 
